@@ -24,17 +24,6 @@ wallet_address_csv
 
 console.log("🎉 成功获取到待输入地址:", wallet_address); // 输出转换后的数据数量
 
-// 询问用户当前批次
-// 20个钱包为1组,添加第几组, 就输入数字几
-let curr_group = prompt("请输入当前待处理的批次（默认为1）：", "1");
-curr_group = parseInt(curr_group);
-if (isNaN(curr_group) || curr_group <= 0) {
-  console.error("输入无效！请输入正整数。");
-  // 退出运行
-} else {
-  console.log(`🪧 选择的批次为：${curr_group}`);
-}
-
 let one_group_count = 20;
 let wallet_address_keys = Object.keys(wallet_address);
 let wallet_count = wallet_address_keys.length;
@@ -44,7 +33,7 @@ if (add_count > one_group_count) {
   add_count = one_group_count;
 }
 
-let group_start_index = (curr_group - 1) * one_group_count;
+let group_start_index = 0;
 if (wallet_count - group_start_index < one_group_count) {
   add_count = wallet_count - group_start_index;
 }
@@ -66,6 +55,10 @@ if (isOpenedDialog) {
   // 获取 chain_table_inputs 的引用
   chain_table_inputs = dialogContainer.querySelector(".withdraw-book-list");
 } else {
+  console.warn("请点击新增提币地址，打开弹出框再执行");
+  console.warn("请点击新增提币地址，打开弹出框再执行");
+  console.warn("请点击新增提币地址，打开弹出框再执行");
+  console.warn("请点击新增提币地址，打开弹出框再执行");
   console.warn("请点击新增提币地址，打开弹出框再执行");
 }
 
