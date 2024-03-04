@@ -45,7 +45,7 @@ let add_max = add_count;
 
 let dialogContainer = document.querySelector(".balance_okui-dialog-window");
 const title = dialogContainer
-  ? dialogContainer.querySelector(".top-content-title")
+  ? dialogContainer.querySelector(".modal-title")
   : null;
 const isOpenedDialog =
   title && ["Add a new address", "新增地址"].includes(title.innerText);
@@ -107,7 +107,6 @@ function DepositAddressBook_add() {
 
   current_index++;
   add_max--;
-  console.log(add_max);
   if (add_max === 0) {
     clearInterval(intervalId);
     console.log("✅ 全部输入完毕");
